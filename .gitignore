@@ -13,5 +13,6 @@ pom.xml.asc
 .nrepl-port
 .cpcache/
 
-.lsp
 .clj-kondo
+.idea
+.lsp
