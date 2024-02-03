@@ -5,12 +5,12 @@
 - Introduction - participants
 
 ## Module 1: Basics
-- [Introduction - Clojure](/trainings/doc/1-clojure-introduction/1-why-clojure.md)
-- [Lisp](/trainings/doc/1-clojure-introduction/2-lisp.md)
-- [REPL](/trainings/doc/1-clojure-introduction/3-repl.md)
+- [Introduction - Clojure](/doc/1-clojure-introduction/1-why-clojure.md)
+- [Lisp](/doc/1-clojure-introduction/2-lisp.md)
+- [REPL](/doc/1-clojure-introduction/3-repl.md)
 
 ## Module 2: Structuring Clojure Projects
-- [Introducing Leiningen](/trainings/doc/2-leiningen/1-lein-intro.md)
+- [Introducing Leiningen](/doc/2-leiningen/1-lein-intro.md)
 - Using Namespaces
 - Writing tests With Clojure.Test
 
