@@ -6,7 +6,7 @@ Before we explore Clojure, it is necessary to understand the Lisp syntax. There 
 
 ### Everything is a list
 
-The first thing coming after open parenthesis `(` is the *name* of the function (or the call to the function), and rest all are *arguments* to that function.
+### The first thing coming after open parenthesis `(` is the *name* of the function (or the call to the function), and rest all are *arguments* to that function.
 
 ### It uses *prefix* notation
 
@@ -16,7 +16,7 @@ The first thing coming after open parenthesis `(` is the *name* of the function 
 | Prefix (operator **before** the operands) | + 2 2 |
 | Postfix (operator **after** the operands) | 2 2 + |
 
-#### Advantages of a prefix operator
+#### Advantages of a prefix notation
 
 Q. Can you guess the advantages?
 
