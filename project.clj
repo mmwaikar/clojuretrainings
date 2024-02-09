@@ -7,5 +7,6 @@
                  [clojure.java-time "1.4.2"]]
   :main ^:skip-aot clojuretrainings.core
   :target-path "target/%s"
+  :java-source-paths ["src/java"]
   :profiles {:uberjar {:aot :all
                        :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}})

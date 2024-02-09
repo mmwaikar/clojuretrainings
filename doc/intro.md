@@ -21,6 +21,12 @@
 - Recursion In Clojure
 - Types
 
+## Module 4: Interacting With Java
+- Working With Java
+- Proxying And Reifying Java Classes
+- Generating Java Classes
+- Using Java Code With Leiningen
+
 Original Syllabus
 -----------------
 

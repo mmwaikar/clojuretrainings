@@ -5,6 +5,7 @@
            (org.xml.sax.helpers DefaultHandler)
            (java.io StringReader)
            (javax.xml.parsers SAXParserFactory)
+           (myinterop EnglishGreeting HindiGreeting)
            ))
 
 (def xml-to-parse "<foo><bar>Body of bar</bar></foo>")
@@ -75,8 +76,7 @@
     (println "after transformation:" (seq (amap obj-array idx _ (.toUpperCase (aget obj-array idx)))))
 
     ;; find the length of the longest string
-    (println (areduce obj-array idx ret 0 (max ret (.length (aget obj-array idx)))))
-    ))
+    (println (areduce obj-array idx ret 0 (max ret (.length (aget obj-array idx)))))))
 
 (defn convenience-functions []
   (let [s-arr ["a" "short" "message"]]
@@ -114,6 +114,13 @@
     (Class/forName class-name) true
     (catch ClassNotFoundException _ false)))
 
+;; use Java classes
+(defn use-own-java-classes []
+  (let [eng-greeting (proxy [EnglishGreeting] [])
+        hindi-greeting (proxy [HindiGreeting] [])]
+    (println "greetings in English:" (. eng-greeting greet "Bob"))
+    (println "greetings in Hindi:" (. hindi-greeting greet "Bob"))))
+
 ;; Part 3 - calling Clojure from Java
 
 (comment
@@ -126,4 +133,5 @@
  (try-finally-ex)
  (class-available? "a.b.c")
  (class-available? "java.lang.Long")
+ (use-own-java-classes)
   )
