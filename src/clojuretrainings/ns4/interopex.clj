@@ -5,12 +5,12 @@
            (org.xml.sax.helpers DefaultHandler)
            (java.io StringReader)
            (javax.xml.parsers SAXParserFactory)
-           (myinterop EnglishGreeting HindiGreeting)
+           (myinterop Greeting EnglishGreeting HindiGreeting)
            ))
 
 (def xml-to-parse "<foo><bar>Body of bar</bar></foo>")
 
-;; Part 1 - calling Java from Clojure
+;; Part 1 - calling (in-built) Java from Clojure
 (defn use-java-classes []
   (let [rnd (new Random)
         rnd-dot-form (Random.)
@@ -114,12 +114,24 @@
     (Class/forName class-name) true
     (catch ClassNotFoundException _ false)))
 
-;; use Java classes
+;; implement Java interface in Clojure
+(defn marathi-greeting [name]
+  (str "Namaskar " name))
+
+(defn proxy-implements-java-interface []
+  (proxy [Greeting] []
+    (greet [name] (marathi-greeting name))))
+
+;; use Java classes which we have defined
 (defn use-own-java-classes []
   (let [eng-greeting (proxy [EnglishGreeting] [])
-        hindi-greeting (proxy [HindiGreeting] [])]
+        hindi-greeting (proxy [HindiGreeting] [])
+        marathi-greeting (proxy-implements-java-interface)]
+    ;; proxy provides us with a proxy class object i.e anonymous which is short-lived
+    ;; can only implement methods which are present in interface
     (println "greetings in English:" (. eng-greeting greet "Bob"))
-    (println "greetings in Hindi:" (. hindi-greeting greet "Bob"))))
+    (println "greetings in Hindi:" (.greet hindi-greeting "Bob"))
+    (println "greetings in Marathi:" (.greet marathi-greeting "Bob"))))
 
 ;; Part 3 - calling Clojure from Java
 
