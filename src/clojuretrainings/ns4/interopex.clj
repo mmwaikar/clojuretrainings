@@ -51,7 +51,6 @@
 ;; Part 2 - using Java collections
 
 ;; Java arrays are special - they do not implement any interface
-
 (defn use-java-arrays []
   (let [arr (make-array String 5)
         obj-array (to-array ["easier" "array" "creation"])
@@ -147,7 +146,7 @@
  (use-java-classes)
  (fluent-api-ex)
  (do-to-macro-ex)
- (use-java-arrays) 
+ (use-java-arrays)
  (convenience-functions)
  (demo-sax-parse xml-to-parse print-element-handler)
  (try-finally-ex)

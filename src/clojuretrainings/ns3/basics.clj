@@ -19,11 +19,11 @@
       (println "n (set to nil) always evaluates to false"))
     
     (if anything-else
-      (println "anything other than false or nil (e.g. a string) eveluates to true")
+      (println "anything other than false or nil (e.g. a string) evaluates to true")
       (println "any valid value can never be false"))
     
     (if misc
-      (println "anything other than false or nil (e.g. in int) eveluates to true")
+      (println "anything other than false or nil (e.g. in int) evaluates to true")
       (println "any valid value can never be false"))))
 
 ;; predicates - a fn which returns true or false

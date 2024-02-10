@@ -23,9 +23,17 @@
 
 ## Module 4: Interacting With Java
 - ☑ Working With Java
-- Proxying And Reifying Java Classes
+- ☑ Proxying And ☒ Reifying Java Classes
 - Generating Java Classes
 - ☑ Using Java Code With Leiningen
+
+
+# Websites for improving your Clojure chops
+
+You can improve your Clojure skills by solving problems listed on the following websites -
+
+- [4clojure](https://4clojure.oxal.org/)
+- [exercism](https://exercism.org/)
 
 Original Syllabus
 -----------------
