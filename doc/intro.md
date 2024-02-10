@@ -1,17 +1,17 @@
 # Clojure Syllabus
 
 ## Introduction
-- &#x2611; Introduction - instructor
-- &#x2611; Introduction - participants
+- ☑ Introduction - instructor
+- ☑ Introduction - participants
 
 ## Module 1: Basics
-- &#x2611; [Introduction - Clojure](/doc/1-clojure-introduction/1-why-clojure.md)
-- &#x2611; [Lisp](/doc/1-clojure-introduction/2-lisp.md)
-- &#x2611; [REPL](/doc/1-clojure-introduction/3-repl.md)
+- ☑ [Introduction - Clojure](/doc/1-clojure-introduction/1-why-clojure.md)
+- ☑ [Lisp](/doc/1-clojure-introduction/2-lisp.md)
+- ☑ [REPL](/doc/1-clojure-introduction/3-repl.md)
 
 ## Module 2: Structuring Clojure Projects
-- &#x2611; [Introducing Leiningen](/doc/2-leiningen/1-lein-intro.md)
-- &#x2611; Using Namespaces
+- ☑ [Introducing Leiningen](/doc/2-leiningen/1-lein-intro.md)
+- ☑ Using Namespaces
 - Writing tests With Clojure.Test
 
 ## Module 3: Deep Dive
@@ -22,10 +22,10 @@
 - Types
 
 ## Module 4: Interacting With Java
-- &#x2611; Working With Java
+- ☑ Working With Java
 - Proxying And Reifying Java Classes
 - Generating Java Classes
-- &#x2611; Using Java Code With Leiningen
+- ☑ Using Java Code With Leiningen
 
 Original Syllabus
 -----------------
@@ -54,7 +54,7 @@ Original Syllabus
 - Working With Java
 - Proxying And Reifying Java Classes
 - Generating Java Classes
-- Using Java Code With Leiningen &#x2611;
+- Using Java Code With Leiningen ☑
 
 ## Module 5: Concurrency
 - Basic Concurrency In Clojure

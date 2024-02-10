@@ -114,6 +114,14 @@
     (Class/forName class-name) true
     (catch ClassNotFoundException _ false)))
 
+;; Proxy: It allows you to implement a Java interface or extend from some super 
+;; class. In reality, it creates a new object that calls your Clojure functions 
+;; when needed.
+;;
+;; Reify: Reify allows you to implement interfaces and Clojure protocols (we will 
+;; see them later). It is not capable of extending classes. It is a better 
+;; performant than the proxy and should be used whenever possible.
+
 ;; implement Java interface in Clojure
 (defn marathi-greeting [name]
   (str "Namaskar " name))
