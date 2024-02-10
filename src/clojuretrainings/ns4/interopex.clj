@@ -124,14 +124,14 @@
 
 ;; use Java classes which we have defined
 (defn use-own-java-classes []
-  (let [eng-greeting (proxy [EnglishGreeting] [])
-        hindi-greeting (proxy [HindiGreeting] [])
-        marathi-greeting (proxy-implements-java-interface)]
+  (let [eng-greeting-obj (EnglishGreeting.)
+        hindi-greeting-obj (proxy [HindiGreeting] [])
+        marathi-greeting-obj (proxy-implements-java-interface)]
     ;; proxy provides us with a proxy class object i.e anonymous which is short-lived
     ;; can only implement methods which are present in interface
-    (println "greetings in English:" (. eng-greeting greet "Bob"))
-    (println "greetings in Hindi:" (.greet hindi-greeting "Bob"))
-    (println "greetings in Marathi:" (.greet marathi-greeting "Bob"))))
+    (println "greetings in English:" (.greet eng-greeting-obj "Bob"))
+    (println "greetings in Hindi:" (.greet hindi-greeting-obj "Bob"))
+    (println "greetings in Marathi:" (.greet marathi-greeting-obj "Bob"))))
 
 ;; Part 3 - calling Clojure from Java
 
