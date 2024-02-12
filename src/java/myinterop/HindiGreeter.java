@@ -1,6 +1,6 @@
 package myinterop;
 
-public class HindiGreeting implements Greeting {
+public class HindiGreeter implements Greeter {
     
     @Override
     public String greet(String name) {

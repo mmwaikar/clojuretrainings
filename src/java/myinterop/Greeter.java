@@ -3,7 +3,7 @@ package myinterop;
 /**
  * Greet
  */
-public interface Greeting {
+public interface Greeter {
 
     String greet(String name);
 }
