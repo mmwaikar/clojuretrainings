@@ -27,10 +27,14 @@
 - Generating Java Classes
 - ☑ Using Java Code With Leiningen
 
+## Module 6: Writing Safer Software
+- Types And Records ☑
+- Protocols ☑
+- Multimethods
 
 # Websites for improving your Clojure chops
 
-You can improve your Clojure skills by solving problems listed on the following websites -
+You can improve your Clojure skills by solving problems listed on the following websites:
 
 - [4clojure](https://4clojure.oxal.org/)
 - [exercism](https://exercism.org/)
