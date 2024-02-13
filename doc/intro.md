@@ -30,7 +30,7 @@
 ## Module 6: Writing Safer Software
 - Types And Records ☑
 - Protocols ☑
-- Multimethods
+- Multimethods ☑
 
 # Websites for improving your Clojure chops
 
