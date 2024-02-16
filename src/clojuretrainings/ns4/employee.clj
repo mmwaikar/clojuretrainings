@@ -16,17 +16,20 @@
    [[name age] (ref age)]))
 
 (defn -greet [this]
-  "greet from - myinterop.Employee")
+  "greet from - clojuretrainings.ns4.Employee")
 
+;; We've used both constructor signatures to create instances of our generated
+;; class. We’ve also called a superclass method getName and the overridden method 
+;; greet.
 (defn -main []
   (let [e1 (new clojuretrainings.ns4.Employee "Vicky")]
-    (println (.getName e1))
-    (println (.getAge e1))
-    (println (.greet e1)))
+    (println "using getName():" (.getName e1))
+    (println "using getAge():" (.getAge e1))
+    (println "using greet():" (.greet e1)))
   (let [e2 (new clojuretrainings.ns4.Employee "Rocky" 20)]
-    (println (.getName e2))
-    (println (.getAge e2))
-    (println (.greet e2))))
+    (println "using getName():" (.getName e2))
+    (println "using getAge():" (.getAge e2))
+    (println "using greet():" (.greet e2))))
 
 (comment
   (-main)

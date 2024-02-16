@@ -140,6 +140,7 @@
     (println "greetings in Marathi:" (.greet marathi-greeter-obj "Bob"))))
 
 ;; Part 3 - calling Clojure from Java
+;; check (ns clojuretrainings.ns4.cljfromjava)
 
 (comment
  (use-java-classes)
