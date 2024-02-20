@@ -1,7 +1,7 @@
 (ns clojuretrainings.ns6.safer)
 
 ;; RECORDS
-
+;;
 ;; maps require no definition of any sort: you just use literal syntax to 
 ;; build them right on the spot
 ;;
@@ -118,8 +118,26 @@
 ;; unless we implement them ourselves. One final note about deftype — it’s the 
 ;; one mechanism by which Clojure lets you create classes with volatile and 
 ;; mutable fields.
+;;
+;; Reification means to bring something into being or to turn something into a 
+;; concrete form. The reify macro takes a protocol, which by itself is an 
+;; abstract set of methods and creates a concrete instance of an anonymous data 
+;; type that implements that protocol.
+
+(defn reify-ex [self-driving]
+  (let [self-driving-car {:wheels 4 :self-driving self-driving}]
+    (reify Vehicle
+      (drive [vehicle]
+             (let [desc (if (true? (:self-driving self-driving-car))
+                          "a self-driving car"
+                          "an old fashioned car")]
+               (println "Drive" desc)))
+      
+      (honk [vehicle]
+            (println "honking a self driving car horn")))))
 
 (comment
   (records-ex)
   (protocols-ex)
+  (drive (reify-ex true))
   )

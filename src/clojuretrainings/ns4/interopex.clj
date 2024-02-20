@@ -119,6 +119,7 @@
 ;; Reify: Reify allows you to implement interfaces and Clojure protocols (we will 
 ;; see them later). It is not capable of extending classes. It is a better 
 ;; performant than the proxy and should be used whenever possible.
+;; For reify example, check clojuretrainings.ns6.safer.clj reify-ex function.
 
 ;; implement Java interface in Clojure
 (defn marathi-greeter [name]
