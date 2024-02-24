@@ -23,14 +23,14 @@
 
 ## Module 4: Interacting With Java
 - ☑ Working With Java
-- ☑ Proxying And ☒ Reifying Java Classes
+- ☑ Proxying And Reifying Java Classes
 - ☑ Generating Java Classes
 - ☑ Using Java Code With Leiningen
 
 ## Module 5: Concurrency
-- Basic Concurrency In Clojure
-- Clojure Stm - Atoms
-- Clojure Stm - Refs And Agents
+- ☑ Basic Concurrency In Clojure
+- ☑ Clojure Stm - Atoms
+- ☑ Clojure Stm - Refs And Agents
 - Working With Core.Async
 
 ## Module 6: Writing Safer Software
