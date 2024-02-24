@@ -1,4 +1,4 @@
-(ns clojuretrainings.ns5.concurrency)
+(ns clojuretrainings.ns5.references)
 
 ;; State
 ;; 
@@ -231,6 +231,11 @@
 ;; updated on a per-thread basis. When a var is created, it can be given an initial
 ;; value, which is referred to its root binding. Dynamic vars are most often used
 ;; to name a resource that one or more functions target.
+;;
+;; By default Vars are static, but Vars can be marked as dynamic to allow per - 
+;; thread bindings via the macro binding (as shown in the fn db-query). To define
+;; a dynamic binding, we need to set a metadata tag: ^:dynamic to true (as shown 
+;; below).
 
 (def ^:dynamic *mysql-host*)
 
@@ -241,6 +246,9 @@
     (count *mysql-host*)))
 
 (defn query-all-dbs []
+  ;; pmap works like map, but each time the supplied function is called on an
+  ;; element of the list, it’s done so on an available thread from an internally
+  ;; maintained thread pool.
   (pmap db-query mysql-hosts))
 
 (comment
