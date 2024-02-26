@@ -9,7 +9,7 @@ Clojure addresses the following pain points with existing languages -
 
 - Clojure is a dialect of Lisp (which stands for **Lis**t **P**rocessing). [Racket](https://racket-lang.org/) & [Common Lisp](https://lisp-lang.org/) are some other languages from the Lisp family.
 - Clojure is **dynamic** - so it's very suitable for a lot of tasks, such as scripting, data processing etc.
-- EVen if it is dynamic, it still is a **compiled** language, so it's very fast.
+- Even if it is dynamic, it still is a **compiled** language, so it's very fast.
 - Runs on **JVM** (or compiles to JVM) supporting existing investments made by customers in Java frameworks and libraries. It also has a port that compiles to JavaScript, called [ClojureScript](https://clojurescript.org/). Then, there is [ClojureDart](https://github.com/Tensegritics/ClojureDart) for Flutter and Dart. Yet another is [libpython-clj](https://github.com/clj-python/libpython-clj) for interacting with Python.
 - It has a **REPL** (which stands for **R**ead **E**val **P**rint **L**oop) - which is the interactive mode, just like other dynamic languages have e.g. Python or the modern FP languages have, like [Scala](https://www.scala-lang.org/) & [F#](https://fsharp.org/).
 - It has **value equality** (also called structural equality) - meaning, it compares for values (of arrays, maps etc. not their references).
