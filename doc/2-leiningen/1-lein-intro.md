@@ -21,7 +21,7 @@ It offers various project-related tasks and can:
 lein new app cljproj
 ```
 
-2. Add a dependency to an external library (to the dependencies section):
+2. Add a dependency to an external library (to the `dependencies` section):
 
 ```clojure
 :dependencies [[clojure.java-time "1.4.2"]]
