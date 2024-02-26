@@ -38,7 +38,7 @@
   (println "26 is:" (even-str 26))
   (println "3 is:" (even-str 3)))
 
-;; multi-arity (i.e. numbr of arguments) function
+;; multi-arity (i.e. number of arguments) function
 (defn greeting
   "Returns a greeting of the form 'Hello, username.'
    Default username is 'world'."

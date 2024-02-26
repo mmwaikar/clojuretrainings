@@ -1,5 +1,6 @@
 (ns clojuretrainings.ns6.safer)
 
+;;
 ;; RECORDS
 ;;
 ;; maps require no definition of any sort: you just use literal syntax to 
@@ -49,6 +50,7 @@
       (println "record with existing key deleted: (returns a map :0)" r-key-deleted)
       (println "map with deleted key:" m-key-deleted))))
 
+;;
 ;; PROTOCOLS
 ;;
 ;; A protocol in Clojure is simply a set of function signatures, each with at 
@@ -65,8 +67,8 @@
 
 ;; Types (or records) can implement a protocol after any of them has been 
 ;; defined. What we’ve just done is impossible with Java interfaces or C++ 
-;; classes, because the concrete type (such as Car) must name at the time it’s 
-;; defined all the interfaces or classes it’s going to implement. Here we went 
+;; classes, because the concrete type (such as Car) must name, at the time it’s
+;; defined, all the interfaces or classes it’s going to implement. Here we went 
 ;; the other way around — Car was defined before the Vehicle protocol even 
 ;; existed, but we easily extended Vehicle to each of them. THIS BECOMES SPECIAL
 ;; WHEN YOU OWN NEITHER OF THEM.
