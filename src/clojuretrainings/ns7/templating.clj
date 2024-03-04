@@ -26,18 +26,49 @@
 ;; - Embed HTML in your code
 
 (def hello-template "Hello {{name}}!")
-(def email-template "email.txt")
+(def nested-data-template "Hello {{person.fn}} {{person.ln}}!")
+(def array-data-template "Hello {{persons.1.fn}} {{persons.1.ln}}!")
+(def filter-template "Hello {{fn|capitalize}} {{ln|upper}}, today is {{dt|date:shortDate}}.")
 
-;; (sp/set-resource-path! "./templates")
+(def email-file-template "email.txt")
+(def body-file-template "body.html")
+(def index-file-template "index.html")
 
 (defn selmer-examples []
   (let [name-data {:name "King"}
+        nested-data {:person {:fn "Roger" :ln "Federer"}}
+        array-data {:persons [{:fn "Roger" :ln "Federer"} {:fn "Novak" :ln "Djokovic"}]}
         ht-output (sp/render hello-template name-data)
-        et-output (sp/render-file email-template name-data)]
+        nt-output (sp/render nested-data-template nested-data)
+        at-output (sp/render array-data-template array-data)
+        et-output (sp/render-file email-file-template name-data)]
     (println "hello-template output:" ht-output)
-    (println "email-template output:" et-output)
+    (println "nested-data-template output:" nt-output)
+    (println "array-data-template output:" at-output)
+    (println "email-template output:")
+    (println et-output)))
+
+(defn selmer-html-examples []
+  (let [countries-data {:countries ["India" "USA"]}
+        html-data (merge {:cricketer true :footballer false} countries-data)
+        filter-data {:fn "rafael" :ln "nadal" :dt (java.util.Date.)}
+        countries-output (sp/render-file body-file-template countries-data)
+        index-output (sp/render-file index-file-template html-data)
+        ft-output (sp/render filter-template filter-data)]
+    
+    ;; Tags are used to add various functionality to the template such as 
+    ;; looping and conditions. The below example uses a for tag.
+    (println "body html output:" countries-output)
+    (println "index html output:" index-output)
+    
+    ;; Filters - in many cases you may wish to postprocess the value of a 
+    ;; variable. For example, you might want to convert it to upper case, pluralize
+    ;; it, or parse it as a date. This can be done by specifying a filter following
+    ;; the name of the variable. The filters are separated using the | character.
+    (println "filter-template output:" ft-output)
     ))
 
 (comment
   (selmer-examples)
+  (selmer-html-examples)
   )
