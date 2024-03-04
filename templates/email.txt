@@ -1,0 +1,6 @@
+Hello {{name}},
+
+Please report to the office from Monday, 4th Mar, 2024.
+
+Regards,
+HR

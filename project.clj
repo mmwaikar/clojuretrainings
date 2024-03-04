@@ -5,9 +5,12 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [org.clojure/core.async "1.6.681"]
+                 [selmer "1.12.59"]
+                 [hiccup "2.0.0-RC3"]
                  [clojure.java-time "1.4.2"]]
   :main ^:skip-aot clojuretrainings.core
   :target-path "target/%s"
   :java-source-paths ["src/java"]
   :profiles {:uberjar {:aot :all
-                       :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}})
+                       :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}
+             :dev {:resource-paths ["templates"]}})
