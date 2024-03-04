@@ -24,17 +24,36 @@
 ;; There are really two choices:
 ;; - Embed code in your HTML
 ;; - Embed HTML in your code
+;;
+;; Why would you embed code in your HTML?
+;; The main argument to embed code in your HTML is that your HTML files still
+;; mostly look like HTML. That means anyone who is familiar with HTML can modify
+;; them. The language for the code embedded in your HTML is usually very basic 
+;; and easy to understand. It is done so on purpose, so that your templates don't
+;; start to have domain logic in them. Instead, they should have what is known
+;; as display logic only. Display logic only deals with how the HTML gets generated.
+;;
+;; Why would you embed HTML in your code?
+;; The main argument to embed HTML in your code is that you have the whole power
+;; of your main language to work with. Besides simple loops and conditionals,
+;; you may want other ways of manipulating your HTML. In Clojure, many of the
+;; HTML libraries that embed HTML in your code do so with data representations
+;; of the HTML. For instance, Hiccup uses vectors to represent HTML tags. That
+;; means you can easily concat things together.
+;;
+;; You're going to have to decide which of these two you prefer.
+;; ** If you can't choose, default to embedding HTML in your code. **
 
 (def hello-template "Hello {{name}}!")
 (def nested-data-template "Hello {{person.fn}} {{person.ln}}!")
 (def array-data-template "Hello {{persons.1.fn}} {{persons.1.ln}}!")
 (def filter-template "Hello {{fn|capitalize}} {{ln|upper}}, today is {{dt|date:shortDate}}.")
 
-(def email-file-template "email.txt")
-(def body-file-template "body.html")
-(def index-file-template "index.html")
-(def child-a-file-template "child-a.html")
-(def child-b-file-template "child-b.html")
+(def email-file-template "./selmer/email.txt")
+(def body-file-template "./selmer/body.html")
+(def index-file-template "./selmer/index.html")
+(def child-a-file-template "./selmer/child-a.html")
+(def child-b-file-template "./selmer/child-b.html")
 
 (defn selmer-examples []
   (let [name-data {:name "King"}
@@ -63,15 +82,18 @@
     ;; Tags
     ;; Tags are used to add various functionality to the template such as 
     ;; looping and conditions. The below example uses a for tag.
-    (println "body html output:" countries-output)
-    (println "index html output:" index-output)
+    (println "body html output:")
+    (println countries-output)
+    (println "index html output:")
+    (println index-output)
     
     ;; Filters
     ;; In many cases you may wish to postprocess the value of a variable.
     ;; For example, you might want to convert it to upper case, pluralize it,
     ;; or parse it as a date. This can be done by specifying a filter following
     ;; the name of the variable. The filters are separated using the | character.
-    (println "filter-template output:" ft-output)
+    (println "filter-template output:")
+    (println ft-output)
 
     ;; Template inheritance
     ;; Templates can inherit from other templates using the extends tag. When
@@ -80,8 +102,7 @@
     (println "child-a-output:")
     (println child-a-output)
     (println "child-b-output:")
-    (println child-b-output)
-    ))
+    (println child-b-output)))
 
 (comment
   (selmer-examples)
