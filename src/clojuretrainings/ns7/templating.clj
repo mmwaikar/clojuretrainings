@@ -44,6 +44,11 @@
 ;; You're going to have to decide which of these two you prefer.
 ;; ** If you can't choose, default to embedding HTML in your code. **
 
+;; Selmer template engine offer the following building blocks:
+;; {{ placeholders }}
+;; {{ placeholder|filters }}
+;; {% tags %}
+
 (def hello-template "Hello {{name}}!")
 (def nested-data-template "Hello {{person.fn}} {{person.ln}}!")
 (def array-data-template "Hello {{persons.1.fn}} {{persons.1.ln}}!")
