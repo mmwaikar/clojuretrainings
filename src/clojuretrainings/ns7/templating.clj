@@ -33,6 +33,8 @@
 (def email-file-template "email.txt")
 (def body-file-template "body.html")
 (def index-file-template "index.html")
+(def child-a-file-template "child-a.html")
+(def child-b-file-template "child-b.html")
 
 (defn selmer-examples []
   (let [name-data {:name "King"}
@@ -54,18 +56,31 @@
         filter-data {:fn "rafael" :ln "nadal" :dt (java.util.Date.)}
         countries-output (sp/render-file body-file-template countries-data)
         index-output (sp/render-file index-file-template html-data)
-        ft-output (sp/render filter-template filter-data)]
+        ft-output (sp/render filter-template filter-data)
+        child-a-output (sp/render-file child-a-file-template {})
+        child-b-output (sp/render-file child-b-file-template {})]
     
+    ;; Tags
     ;; Tags are used to add various functionality to the template such as 
     ;; looping and conditions. The below example uses a for tag.
     (println "body html output:" countries-output)
     (println "index html output:" index-output)
     
-    ;; Filters - in many cases you may wish to postprocess the value of a 
-    ;; variable. For example, you might want to convert it to upper case, pluralize
-    ;; it, or parse it as a date. This can be done by specifying a filter following
+    ;; Filters
+    ;; In many cases you may wish to postprocess the value of a variable.
+    ;; For example, you might want to convert it to upper case, pluralize it,
+    ;; or parse it as a date. This can be done by specifying a filter following
     ;; the name of the variable. The filters are separated using the | character.
     (println "filter-template output:" ft-output)
+
+    ;; Template inheritance
+    ;; Templates can inherit from other templates using the extends tag. When
+    ;; extending a template, any blocks in the parent will be overwritten by 
+    ;; blocks from the child with the same name.
+    (println "child-a-output:")
+    (println child-a-output)
+    (println "child-b-output:")
+    (println child-b-output)
     ))
 
 (comment
